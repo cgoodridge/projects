@@ -13,14 +13,12 @@ import CardContent from '@material-ui/core/CardContent';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Button from '@material-ui/core/Button';
 import './app.scss';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  ScrollingProvider,
-  useScrollSection,
-  Section,
-} from 'react-scroll-section';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +26,16 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
     },
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+  },
+
+  gridList: {
+    flexWrap: 'nowrap',
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
   },
 }));
 
@@ -138,7 +146,7 @@ function App() {
                 <img className="astro" src="/img/mercury.svg"></img>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} className={classes.root}>
               {cardInfo.map(renderCard)}
             </Grid>
         </Grid>
@@ -152,7 +160,7 @@ function App() {
                 <img className="astro" src="/img/venus.png"></img>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} className={classes.root}>
               {cardInfo.map(renderCard)}
             </Grid>
         </Grid>
@@ -166,7 +174,7 @@ function App() {
                 <img className="astro" src="/img/earth.svg"></img>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} className={classes.root}>
               {cardInfo.map(renderCard)}
             </Grid>
         </Grid>
