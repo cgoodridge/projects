@@ -47,6 +47,18 @@ const cardInfo = [
   
 ];
 
+const reactCardInfo = [
+  {image: "img/omnitrix.png", name: "Codon Stream", description: "App made in flutter to classify species of animals on earth" , price:16, alt:"Shrimp Alfredo"},
+  {image: "img/omnitrix.png", name: "Project Kronos", description: "Time Tracking app with pomodoro funtionality made in flutter" , price:16, alt:"Shrimp Alfredo"},
+  
+];
+
+const unityCardInfo = [
+  {image: "img/omnitrix.png", name: "Codon Stream", description: "App made in flutter to classify species of animals on earth" , price:16, alt:"Shrimp Alfredo"},
+  {image: "img/omnitrix.png", name: "Project Kronos", description: "Time Tracking app with pomodoro funtionality made in flutter" , price:16, alt:"Shrimp Alfredo"},
+  
+];
+
 
 const Toggle = (initialValue = false) => 
 {
@@ -69,8 +81,6 @@ function App() {
   const handleClick = () => {
     console.info('You clicked the Chip.');
   };
-
-  
     
 
   const CodonStream = () =>{
@@ -79,7 +89,7 @@ function App() {
         
         <div className="projectCard" >
           <Grid container style={{marginBottom: '10px'}}>
-            <Grid item xs={7}>
+            <Grid item xs={6}>
 
               <Typography gutterBottom variant="h6" component="h2" align="left" style={{fontFamily:"Poiret One"}}>
                   {cardInfo[0].name} 
@@ -89,12 +99,13 @@ function App() {
                   {cardInfo[0].description} 
               </Typography>
 
-              <Button style={{borderRadius:'50px', borderColor:'white', color:'white', fontFamily:'Poiret One', margin:'16px'}} variant="outlined">View Demo</Button>
+              <Button style={{borderRadius:'50px', borderColor:'white', color:'white', fontFamily:'Poiret One', margin:'8px'}} variant="outlined">View Demo</Button>
+              <Button style={{borderRadius:'50px', borderColor:'white', color:'white', fontFamily:'Poiret One', margin:'8px'}} variant="outlined">Source Code</Button>
 
             </Grid>
 
-            <Grid item xs={5}>
-              <img src={cardInfo[0].image} style={{height: 100}} align="right"></img>
+            <Grid item xs={6}>
+              <img src={cardInfo[0].image} style={{height: 100}} align="center"></img>
             </Grid>
 
           </Grid>
@@ -108,7 +119,7 @@ function App() {
       
       <div className="projectCard" >
         <Grid container style={{marginBottom: '10px'}}>
-          <Grid item xs={7}>
+          <Grid item xs={6}>
 
             <Typography gutterBottom variant="h6" component="h2" align="left" style={{fontFamily:"Poiret One"}}>
                 {cardInfo[1].name} 
@@ -118,12 +129,13 @@ function App() {
                 {cardInfo[1].description} 
             </Typography>
 
-            <Button style={{borderRadius:'50px', borderColor:'white', color:'white', fontFamily:'Poiret One', margin:'16px'}} variant="outlined">View Demo</Button>
+            <Button style={{borderRadius:'50px', borderColor:'white', color:'white', fontFamily:'Poiret One', margin:'8px'}} variant="outlined">View Demo</Button>
+            <Button style={{borderRadius:'50px', borderColor:'white', color:'white', fontFamily:'Poiret One', margin:'8px'}} variant="outlined">Source Code</Button>
 
           </Grid>
 
-          <Grid item xs={5}>
-            <img src={cardInfo[0].image} style={{height: 100}} align="right"></img>
+          <Grid item xs={6}>
+            <img src={cardInfo[0].image} style={{height: 100}} align="center"></img>
           </Grid>
 
         </Grid>
@@ -133,7 +145,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App starField">
       
         <Grid container className="mainGrid">
             <Grid item xs={12} sm={6}>
@@ -143,12 +155,12 @@ function App() {
             <Grid item xs={12} sm={6}>  
               <Grid container className="menu">
                 <Grid item xs={12} sm={6}>
-                    <Link href="#homeSection" underline='none' style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                      <Typography variant="h5" component="h2" align="left" style={{fontFamily:'Poiret One', width:'200px', marginBottom:'32px', marginTop:'32px'}}>
-                        Home
-                      </Typography>
-                      <span className='menuBubble'></span> 
-                    </Link>
+                  <Link href="#homeSection" underline='none' style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                    <Typography variant="h5" component="h2" align="left" style={{fontFamily:'Poiret One', width:'200px', marginBottom:'32px', marginTop:'32px'}}>
+                      Home
+                    </Typography>
+                    <span className='menuBubble'></span> 
+                  </Link>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <Link href="#flutterSection" underline='none' style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
@@ -197,7 +209,7 @@ function App() {
 
         <Grid container className="mainGrid sectionBlock" id="flutterSection">
 
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={3}>
 
               <Typography variant="h3" component="h2" align="center" style={{fontFamily:'Poiret One'}}>
                 Flutter
@@ -245,7 +257,7 @@ function App() {
         </Grid>
 
         <Grid container className="mainGrid sectionBlock" id="reactSection">
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={3}>
               <Typography variant="h3" component="h2" align="center" style={{fontFamily:'Poiret One'}}>
                 React
               </Typography>
@@ -254,12 +266,39 @@ function App() {
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} className={classes.root}>
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Codon Stream"
+                onClick={() => showCard("Codon Stream")}
+                variant="outlined"
+              />
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Project Kronos"
+                onClick={() => showCard("Project Kronos")}
+                variant="outlined"
+              />
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Project Omen"
+                onClick={() => showCard("Project Omen")}
+                variant="outlined"
+              />
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Project Gaia"
+                onClick={() => showCard("Project Gaia")}
+                variant="outlined"
+              />
+
+              {showProject === "Codon Stream" && <CodonStream /> }
+              {showProject === "Project Kronos" && <ProjectKronos /> }
               
             </Grid>
         </Grid>
 
         <Grid container className="mainGrid sectionBlock" id="unitySection">
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={3}>
               <Typography variant="h3" component="h2" align="center" style={{fontFamily:'Poiret One'}}>
                 Unity
               </Typography>
@@ -268,6 +307,33 @@ function App() {
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} className={classes.root}>
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Codon Stream"
+                onClick={() => showCard("Codon Stream")}
+                variant="outlined"
+              />
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Project Kronos"
+                onClick={() => showCard("Project Kronos")}
+                variant="outlined"
+              />
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Project Omen"
+                onClick={() => showCard("Project Omen")}
+                variant="outlined"
+              />
+              <Chip
+                style={{color:'white', borderColor: 'white'}}
+                label="Project Gaia"
+                onClick={() => showCard("Project Gaia")}
+                variant="outlined"
+              />
+
+              {showProject === "Codon Stream" && <CodonStream /> }
+              {showProject === "Project Kronos" && <ProjectKronos /> }
               
             </Grid>
         </Grid>

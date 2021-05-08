@@ -114,6 +114,7 @@ html {
   border: 3px solid;
   border-radius: 15px;
   padding: 16px;
+  /* min-width: 600px !important; */
 }
 
 /* width */

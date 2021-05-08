@@ -10,7 +10,17 @@ $bg: #03081b;
   -webkit-animation: $name $time linear infinite;
   animation: $name $time linear infinite;
 }
+@mixin star {
+  height: 5px;
+  width: 5px;
+  border-radius: 25px;
+  // background-color: $clouds;
+}
 
+// .starField{
+//   @include star;
+//   z-index: -999;
+// }
 %centerElement {
   top: 50%;
   left: 50%;
