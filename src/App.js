@@ -4,22 +4,12 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import IconButton from '@material-ui/core/IconButton';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import './app.scss';
 import { makeStyles } from '@material-ui/core/styles';
+import Starfield from './stars';
+
 
 
 
@@ -68,6 +58,9 @@ const Toggle = (initialValue = false) =>
   }, []);
   return [value, toggle];
 }
+
+
+
 
 
 function App() {
@@ -143,13 +136,19 @@ function App() {
     );  
 };
 
-
   return (
-    <div className="App starField">
+
+    <div className="App">
       
+        <div id="starfield">
+          <Starfield />
+        </div>
+
         <Grid container className="mainGrid">
             <Grid item xs={12} sm={6}>
+            <div class="sun">
               
+            </div>
             </Grid>
 
             <Grid item xs={12} sm={6}>  
@@ -337,9 +336,11 @@ function App() {
               
             </Grid>
         </Grid>
+        {console.log(document.getElementById('starfield'))}
     </div>
     
   );
+
 }
 
 export default App;
